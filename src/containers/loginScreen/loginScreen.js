@@ -37,6 +37,10 @@ TODO: Add/Update logo
     )
   }
 
+  /*
+* Render register block where if user does not
+* have an account the user can opt to register
+*/
   function renderRegister() {
     return (
       <Spring
