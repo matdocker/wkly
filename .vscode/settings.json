@@ -1,0 +1,9 @@
+{
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "css.lint.compatibleVendorPrefixes": "warning",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      }
+      // "eslint.validate": ["javascript"]
+}
