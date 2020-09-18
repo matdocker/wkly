@@ -14,7 +14,7 @@ function textInput( props ) {
 
     */
   const {
-    placeholder, secureTextEntry, passwordRules, delay, textContentType,
+    placeholder, secureTextEntry, passwordRules, delay,
   } = props
   const [textValue, setTextValue] = useState()
   return (
@@ -23,7 +23,7 @@ function textInput( props ) {
       <Spring
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
-        config={{ tension: 50, friction: 5, delay }}
+        config={{ tension: 210, friction: 20, delay }}
 
       >
         {( style ) => (
@@ -35,7 +35,6 @@ function textInput( props ) {
               placeholder={placeholder}
               secureTextEntry={secureTextEntry}
               passwordRules={passwordRules}
-              textContentType={textContentType}
             />
           </View>
         )}

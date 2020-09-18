@@ -1,31 +1,35 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "airbnb",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "semi":["error","never"],
-        "object-curly-newline":["error"],
-        "react/jsx-filename-extension": [0],
-        "linebreak-style": ["error", "windows"],
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0}],
-        "space-in-parens": ["error", "always", { "exceptions": ["empty"] }],
-        "no-use-before-define": [0],
-        "class-methods-use-this":"off"
-        }
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": ["airbnb", "prettier"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"semi": ["off", "never"],
+		"object-curly-newline": ["error"],
+		"react/jsx-filename-extension": [0],
+		"linebreak-style": ["error", "windows"],
+		"no-multiple-empty-lines": ["error", {"max": 1, "maxEOF": 0}],
+		"space-in-parens": ["error", "never"],
+		"no-use-before-define": [0],
+		"class-methods-use-this": "off",
+		"consistent-return": "off",
+		"max-len": "off",
+		"comma-style": ["error", "last"],
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"react/jsx-closing-bracket-location": "off"
+	}
 }

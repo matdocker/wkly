@@ -1,23 +1,37 @@
-import React, { Component } from 'react'
-import {
-  View, Text, Image, TouchableOpacity,
-} from 'react-native'
-import { connect } from 'react-redux'
+import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+//* Screens
+import LoadingScreen from '../../components/loading';
+import LoginScreen from '../../containers/loginScreen/loginScreen';
+import RegisterScreen from '../../containers/registerScreen/registerScreen';
+//* Actions
+import LoadingState from '../../store/actions/loadingAction';
+import LoginRegister from '../../store/actions/loginRegisterAction';
 
-//* Container StyleSheet
-import Style from './styleLoginRegisterManager'
+function loginRegisterManager(props) {
+	const {hasAccount, isLoading} = props;
 
-//  * Screens
-import LoginScreen from '../../containers/loginScreen/loginScreen'
+	if (isLoading === true) {
+		// ! isLoading Reducer initial state is set to false!!
+		return <LoadingScreen visible={isLoading} />;
+	}
 
-function loginRegisterManager() {
-  return (
-    <LoginScreen />
-  )
+	if (hasAccount === true) {
+		return <LoginScreen />;
+	}
+	if (props.hasAccount === false) {
+		return <RegisterScreen />;
+	}
 }
 
-const mapStateToProps = ( state ) => ( {} )
+const mapStateToProps = (state) => ({
+	hasAccount: state.hasAccount,
+	isLoading: state.isLoading,
+});
 
-const mapDispatchToProps = {}
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({LoginRegister, LoadingState}, dispatch);
+}
 
-export default connect( mapStateToProps, mapDispatchToProps )( loginRegisterManager )
+export default connect(mapStateToProps, mapDispatchToProps)(loginRegisterManager);

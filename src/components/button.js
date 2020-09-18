@@ -22,7 +22,7 @@ const button = ( props ) => {
       from={{ opacity: 0 }}
       to={{ opacity: 1 }}
       config={{
-        tension: 50, friction: 5, delay,
+        tension: 210, friction: 20, delay,
       }}
     >
       {( style ) => (
