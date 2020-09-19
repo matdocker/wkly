@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //* Screens
@@ -16,11 +16,10 @@ function loginRegisterManager(props) {
 		// ! isLoading Reducer initial state is set to false!!
 		return <LoadingScreen visible={isLoading} />;
 	}
-
-	if (hasAccount === true) {
+	if (hasAccount === true && isLoading === false) {
 		return <LoginScreen />;
 	}
-	if (props.hasAccount === false) {
+	if (props.hasAccount === false && isLoading === false) {
 		return <RegisterScreen />;
 	}
 }

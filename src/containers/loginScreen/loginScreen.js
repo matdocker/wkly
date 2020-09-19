@@ -9,10 +9,13 @@ import Button from '../../components/button';
 import TextInput from '../../components/textInput';
 //* import actions
 import LoginRegister from '../../store/actions/loginRegisterAction';
+import IsLoggedIn from '../../store/actions/isLoggedInAction';
 //* Container StyleSheet
 import Style from './styleLoginScreen';
 
 function loginScreen(props) {
+	const {isLoggedIn, hasAccount} = props;
+
 	/*
 * Render logo with springs animation and call above
 * TextInput, with in textInput view.
@@ -90,7 +93,9 @@ function loginScreen(props) {
 					color='black'
 					disabled={false}
 					icon='user'
-					onPressFunction={() => console.log('Login!!')}
+					onPressFunction={() => {
+						props.IsLoggedIn(true);
+					}}
 					delay={300}
 				/>
 				<Button
@@ -99,7 +104,7 @@ function loginScreen(props) {
 					color='white'
 					disabled={false}
 					icon='facebook'
-					onPressFunction={() => console.log('Facebook!!')}
+					onPressFunction={() => console.log('Login with Facebook!!')}
 					delay={400}
 				/>
 			</View>
@@ -109,10 +114,11 @@ function loginScreen(props) {
 }
 const mapStateToProps = (state) => ({
 	hasAccount: state.hasAccount,
+	isLoggedIn: state.isLoggedIn,
 });
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({LoginRegister}, dispatch);
+	return bindActionCreators({LoginRegister, IsLoggedIn}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(loginScreen);
