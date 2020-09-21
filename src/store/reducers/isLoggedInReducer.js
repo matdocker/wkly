@@ -7,7 +7,7 @@ const initialState = false;
 
 const value = 'IS_LOGGED_IN';
 
-export default (state = initialState, action) => {
+const isLoggedIn = (state = initialState, action) => {
 	switch (action.type) {
 		case value:
 			return action.payload;
@@ -16,3 +16,4 @@ export default (state = initialState, action) => {
 			return state;
 	}
 };
+export default isLoggedIn;

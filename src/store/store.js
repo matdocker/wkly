@@ -3,8 +3,10 @@ import isLoading from './reducers/loadingReducer';
 import hasAccount from './reducers/loginRegisterReducer';
 import isLoggedIn from './reducers/isLoggedInReducer';
 
-export default combineReducers({
+const CombindeReducer = combineReducers({
 	hasAccount,
 	isLoading,
 	isLoggedIn,
 });
+
+export default CombindeReducer;

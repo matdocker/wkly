@@ -9,7 +9,7 @@ import RegisterScreen from '../../containers/registerScreen/registerScreen';
 import LoadingState from '../../store/actions/loadingAction';
 import LoginRegister from '../../store/actions/loginRegisterAction';
 
-function loginRegisterManager(props) {
+const loginRegisterManager = (props) => {
 	const {hasAccount, isLoading} = props;
 
 	if (isLoading === true) {
@@ -22,15 +22,15 @@ function loginRegisterManager(props) {
 	if (props.hasAccount === false && isLoading === false) {
 		return <RegisterScreen />;
 	}
-}
+};
 
 const mapStateToProps = (state) => ({
 	hasAccount: state.hasAccount,
 	isLoading: state.isLoading,
 });
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators({LoginRegister, LoadingState}, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(loginRegisterManager);

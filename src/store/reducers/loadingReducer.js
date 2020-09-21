@@ -6,7 +6,7 @@
 const initialState = false;
 
 // Reducer function and switch statement
-export default (state = initialState, action) => {
+const loading = (state = initialState, action) => {
 	switch (action.type) {
 		case 'LOADING_STATE':
 			return action.payload;
@@ -15,3 +15,4 @@ export default (state = initialState, action) => {
 			return state;
 	}
 };
+export default loading;

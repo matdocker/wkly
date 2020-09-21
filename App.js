@@ -12,23 +12,15 @@ import Style from './src/styles/appStyle';
 
 const store = createStore(Store);
 
-export class App extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {};
-	}
-
-	render() {
-		return (
-			<Provider store={store}>
-				<StatusBar barStyle='dark-content' />
-				<SafeAreaView style={Style.safeArea}>
-					<Navigation />
-				</SafeAreaView>
-			</Provider>
-		);
-	}
-}
+const App = (props) => {
+	return (
+		<Provider store={store}>
+			<StatusBar barStyle='dark-content' />
+			<SafeAreaView style={Style.safeArea}>
+				<Navigation />
+			</SafeAreaView>
+		</Provider>
+	);
+};
 
 export default App;

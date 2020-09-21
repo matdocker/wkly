@@ -22,7 +22,7 @@ const registerScreen = (props) => {
 * TextInput, with in textInput view.
     TODO: Add/Update logo
 */
-	function renderLogo() {
+	const renderLogo = () => {
 		return (
 			<Spring
 				from={{opacity: 0}}
@@ -40,14 +40,14 @@ const registerScreen = (props) => {
 				)}
 			</Spring>
 		);
-	}
+	};
 
 	/*
 * Render register block where if user does not
 * have an account the user can opt to register
   TODO: assign login register action creator to register touchableOpacity
 */
-	function renderRegister() {
+	const renderRegister = () => {
 		return (
 			<Spring
 				from={{opacity: 0}}
@@ -69,7 +69,7 @@ const registerScreen = (props) => {
 				)}
 			</Spring>
 		);
-	}
+	};
 	return (
 		<View style={Style.registerScreenCont}>
 			<View style={Style.whiteSpace} />
@@ -115,8 +115,8 @@ const mapStateToProps = (state) => ({
 	hasAccount: state.hasAccount,
 });
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators({LoginRegister}, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(registerScreen);

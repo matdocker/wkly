@@ -1,5 +1,3 @@
 import {StyleSheet} from 'react-native';
 
-export default StyleSheet.create({
-	style,
-});
+export default StyleSheet.create({});

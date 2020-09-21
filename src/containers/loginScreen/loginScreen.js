@@ -13,15 +13,16 @@ import IsLoggedIn from '../../store/actions/isLoggedInAction';
 //* Container StyleSheet
 import Style from './styleLoginScreen';
 
-function loginScreen(props) {
-	const {isLoggedIn, hasAccount} = props;
+const loginScreen = (props) => {
+	// ! props not in use - delete
+	// const {isLoggedIn, hasAccount} = props;
 
 	/*
 * Render logo with springs animation and call above
 * TextInput, with in textInput view.
     TODO: Add/Update logo
 */
-	function renderLogo() {
+	const renderLogo = () => {
 		return (
 			<Spring
 				from={{opacity: 0}}
@@ -39,14 +40,14 @@ function loginScreen(props) {
 				)}
 			</Spring>
 		);
-	}
+	};
 
 	/*
 * Render register block where if user does not
 * have an account the user can opt to register
     TODO: assign login register action creator to register touchableOpacity
 */
-	function renderRegister() {
+	const renderRegister = () => {
 		return (
 			<Spring
 				from={{opacity: 0}}
@@ -68,7 +69,7 @@ function loginScreen(props) {
 				)}
 			</Spring>
 		);
-	}
+	};
 	return (
 		<View style={Style.loginScreenCont}>
 			<View style={Style.whiteSpace} />
@@ -111,14 +112,14 @@ function loginScreen(props) {
 			{renderRegister()}
 		</View>
 	);
-}
+};
 const mapStateToProps = (state) => ({
 	hasAccount: state.hasAccount,
 	isLoggedIn: state.isLoggedIn,
 });
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators({LoginRegister, IsLoggedIn}, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(loginScreen);

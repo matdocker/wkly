@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {Bubbles, DoubleBounce, Bars, Pulse} from 'react-native-loader';
 
-function loading(props) {
+const loading = (props) => {
 	const {visible} = props;
 
 	return (
@@ -25,6 +25,6 @@ function loading(props) {
 			<DoubleBounce size={20} color='#1CAFF6' /> */}
 		</View>
 	);
-}
+};
 
 export default loading;

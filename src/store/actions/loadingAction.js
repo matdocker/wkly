@@ -1,12 +1,12 @@
 /*
-* Action creator to switch between application loading state.
-*/
+ * Action creator to switch between application loading state.
+ */
 
-export default function LoadingState( payload ) {
-  return (
-    {
-      type: 'LOADING_STATE',
-      payload,
-    }
-  )
-}
+const LoadingState = (payload) => {
+	return {
+		type: 'LOADING_STATE',
+		payload,
+	};
+};
+
+export default LoadingState;

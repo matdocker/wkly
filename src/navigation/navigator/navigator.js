@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 // Screens
 import LoginRegisterManager from '../loginRegisterManager/loginRegisterManager';
 
-function navigator(props) {
+const navigator = (props) => {
 	const {isLoggedIn, isFirstTime} = props;
 	// * if login state is == false return login manager screen
 	if (isLoggedIn === false) {
@@ -16,14 +16,14 @@ function navigator(props) {
 	if (isLoggedIn === true) {
 		if (isFirstTime === true) return <Text>Logged In && First Time</Text>;
 	}
-}
+};
 const mapStateToProps = (state) => ({
 	isLoggedIn: state.isLoggedIn,
 	isFirstTime: state.isFirstTime,
 });
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators({}, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(navigator);

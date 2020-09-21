@@ -1,9 +1,7 @@
-import { StyleSheet } from 'react-native'
+import {StyleSheet} from 'react-native';
 
 /*
-*StyleSheet for Login Register Manager
-*/
+ *StyleSheet for Login Register Manager
+ */
 
-export default StyleSheet.create( {
-
-} )
+export default StyleSheet.create({});

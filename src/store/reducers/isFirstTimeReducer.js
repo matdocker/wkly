@@ -7,7 +7,7 @@ const initialState = true;
 
 const value = 'IS_FIRST-TIME';
 
-export default (state = initialState, action) => {
+const isFirstTime = (state = initialState, action) => {
 	switch (action.type) {
 		case value:
 			return action.payload;
@@ -16,3 +16,5 @@ export default (state = initialState, action) => {
 			return state;
 	}
 };
+
+export default isFirstTime;
