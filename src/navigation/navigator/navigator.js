@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 // Screens
 import LoginRegisterManager from '../loginRegisterManager/loginRegisterManager';
+import IsFirstTimeScreen from '../../containers/isFirstTimeScreen/isFirstTimeScreen';
 
 const navigator = (props) => {
 	const {isLoggedIn, isFirstTime} = props;
@@ -14,7 +15,12 @@ const navigator = (props) => {
 	}
 	// * if login state is == true return
 	if (isLoggedIn === true) {
-		if (isFirstTime === true) return <Text>Logged In && First Time</Text>;
+		if (isFirstTime === true) {
+			return <IsFirstTimeScreen />;
+		}
+		if (isFirstTime === false) {
+			return <Text>Logged In && not First Time</Text>;
+		}
 	}
 };
 const mapStateToProps = (state) => ({

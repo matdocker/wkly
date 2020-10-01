@@ -13,6 +13,11 @@ import IsLoggedIn from '../../store/actions/isLoggedInAction';
 //* Container StyleSheet
 import Style from './styleLoginScreen';
 
+/* 
+	TODO: Add firebase auth
+	TODO: Add firebase firestore
+ */
+
 const loginScreen = (props) => {
 	// ! props not in use - delete
 	// const {isLoggedIn, hasAccount} = props;

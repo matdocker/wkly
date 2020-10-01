@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {Spring, config} from 'react-spring/renderprops-native';
 
 const button = (props) => {
-	const {title, disabled, color, icon, onPressFunction, delay, type} = props;
+	const {title, disabled, color, icon, onPressFunction, delay, type, Style} = props;
 
 	return (
 		<Spring

@@ -3,9 +3,10 @@
  */
 
 // initialState for isFirstTime
+/*  */
 const initialState = true;
 
-const value = 'IS_FIRST-TIME';
+const value = 'IS_FIRST_TIME';
 
 const isFirstTime = (state = initialState, action) => {
 	switch (action.type) {
